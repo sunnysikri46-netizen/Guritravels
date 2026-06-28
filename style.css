@@ -139,3 +139,195 @@ nav ul li a:hover{
 
 .btn:hover{
     background:#e68900;
+/* ==========================
+   FEATURES
+========================== */
+
+.feature-grid,
+.service-grid,
+.gallery{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+    gap:30px;
+    margin-top:40px;
+}
+
+.feature-card,
+.service-card,
+.car-card{
+    background:#fff;
+    border-radius:15px;
+    padding:30px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+    transition:.3s;
+}
+
+.feature-card:hover,
+.service-card:hover,
+.car-card:hover{
+    transform:translateY(-10px);
+    box-shadow:0 15px 35px rgba(0,0,0,.15);
+}
+
+.feature-card i,
+.service-card i{
+    font-size:50px;
+    color:#0d47a1;
+    margin-bottom:20px;
+}
+
+.feature-card h3,
+.service-card h3{
+    margin-bottom:15px;
+    color:#0d47a1;
+}
+
+.feature-card p,
+.service-card p{
+    color:#666;
+}
+
+/* ==========================
+   GALLERY
+========================== */
+
+.car-card img{
+    width:100%;
+    height:230px;
+    object-fit:cover;
+    border-radius:12px;
+    transition:.4s;
+}
+
+.car-card img:hover{
+    transform:scale(1.05);
+}
+
+.car-card h3{
+    margin-top:15px;
+    color:#0d47a1;
+}
+
+/* ==========================
+   REVIEWS
+========================== */
+
+.reviews{
+    background:#eef4ff;
+}
+
+.review-box{
+    background:white;
+    padding:30px;
+    margin:25px auto;
+    max-width:700px;
+    border-radius:15px;
+    text-align:center;
+    box-shadow:0 8px 20px rgba(0,0,0,.08);
+}
+
+.review-box p:first-child{
+    font-size:28px;
+}
+
+.review-box h4{
+    margin-top:20px;
+    color:#0d47a1;
+}
+
+/* ==========================
+   CONTACT
+========================== */
+
+.contact{
+    background:white;
+    text-align:center;
+}
+
+.contact p{
+    font-size:18px;
+    margin:15px 0;
+}
+
+.contact i{
+    color:#0d47a1;
+    margin-right:10px;
+}
+
+/* ==========================
+   FOOTER
+========================== */
+
+footer{
+    background:#0d47a1;
+    color:white;
+    text-align:center;
+    padding:30px;
+}
+
+/* ==========================
+   MOBILE
+========================== */
+
+@media(max-width:768px){
+
+header{
+    flex-direction:column;
+    padding:15px;
+}
+
+nav ul{
+    flex-wrap:wrap;
+    justify-content:center;
+    margin-top:15px;
+}
+
+nav ul li{
+    margin:8px 12px;
+}
+
+.hero h2{
+    font-size:34px;
+}
+
+.hero p{
+    font-size:18px;
+}
+
+.hero-buttons{
+    flex-direction:column;
+}
+
+.btn{
+    width:100%;
+    max-width:280px;
+    margin:auto;
+}
+
+.logo h1{
+    font-size:20px;
+}
+
+section h2{
+    font-size:30px;
+}
+
+}
+
+/* ==========================
+   SCROLLBAR
+========================== */
+
+::-webkit-scrollbar{
+    width:10px;
+}
+
+::-webkit-scrollbar-thumb{
+    background:#0d47a1;
+    border-radius:10px;
+}
+
+::-webkit-scrollbar-track{
+    background:#eaeaea;
+}
