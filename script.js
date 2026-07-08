@@ -1,30 +1,17 @@
-// ===============================
+// ==============================
 // GURI TOUR & TRAVELS
 // script.js
-// ===============================
+// ==============================
 
-// Mobile Menu
-const menuToggle = document.querySelector(".menu-toggle");
-const navLinks = document.querySelector(".nav-links");
-
-if (menuToggle) {
-    menuToggle.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-    });
+// Current Year
+const year = document.getElementById("year");
+if (year) {
+    year.textContent = new Date().getFullYear();
 }
 
-// Close menu after clicking a link
-document.querySelectorAll(".nav-links a").forEach(link => {
-    link.addEventListener("click", () => {
-        if (navLinks) {
-            navLinks.classList.remove("active");
-        }
-    });
-});
-
-// Smooth Scrolling
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener("click", function(e) {
+// Smooth Scroll
+document.querySelectorAll('a[href^="#"]').forEach(link => {
+    link.addEventListener("click", function(e) {
         e.preventDefault();
 
         const target = document.querySelector(this.getAttribute("href"));
@@ -37,61 +24,81 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     });
 });
 
-// Header Scroll Effect
-window.addEventListener("scroll", () => {
-    const header = document.querySelector("header");
+// Sticky Header
+const header = document.querySelector("header");
 
-    if (header) {
-        if (window.scrollY > 80) {
-            header.classList.add("sticky");
-        } else {
-            header.classList.remove("sticky");
-        }
+window.addEventListener("scroll", () => {
+
+    if(window.scrollY > 80){
+        header.style.background = "#08306b";
+        header.style.padding = "10px 6%";
+    }else{
+        header.style.background = "#0d47a1";
+        header.style.padding = "12px 6%";
     }
+
 });
 
-// Fade-in Animation
-const observer = new IntersectionObserver(entries => {
-    entries.forEach(entry => {
-        if (entry.isIntersecting) {
+// Fade Animation
+const observer = new IntersectionObserver((entries)=>{
+
+    entries.forEach(entry=>{
+
+        if(entry.isIntersecting){
             entry.target.classList.add("show");
         }
+
     });
-}, {
-    threshold: 0.2
+
+},{
+    threshold:0.2
 });
 
-document.querySelectorAll(".fade-in").forEach(el => {
+document.querySelectorAll(".fade").forEach(el=>{
     observer.observe(el);
 });
 
-// Back to Top Button
+// Back To Top Button
 const topBtn = document.getElementById("topBtn");
 
-window.onscroll = function () {
-    if (topBtn) {
-        if (document.body.scrollTop > 400 || document.documentElement.scrollTop > 400) {
-            topBtn.style.display = "block";
-        } else {
-            topBtn.style.display = "none";
-        }
+window.addEventListener("scroll", ()=>{
+
+    if(document.documentElement.scrollTop > 300){
+
+        topBtn.style.display="flex";
+
+    }else{
+
+        topBtn.style.display="none";
+
     }
-};
 
-if (topBtn) {
-    topBtn.addEventListener("click", () => {
-        window.scrollTo({
-            top: 0,
-            behavior: "smooth"
-        });
+});
+
+topBtn.addEventListener("click",()=>{
+
+    window.scrollTo({
+        top:0,
+        behavior:"smooth"
     });
-}
 
-// Current Year
-const year = document.getElementById("year");
+});
 
-if (year) {
-    year.textContent = new Date().getFullYear();
-}
+// Image Hover Animation
+document.querySelectorAll(".car-card img").forEach(img=>{
 
-console.log("Guri Tour & Travels Website Loaded Successfully!");
+    img.addEventListener("mouseenter",()=>{
+
+        img.style.transform="scale(1.08)";
+
+    });
+
+    img.addEventListener("mouseleave",()=>{
+
+        img.style.transform="scale(1)";
+
+    });
+
+});
+
+console.log("Guri Tour & Travels Website Loaded Successfully");
