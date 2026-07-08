@@ -199,7 +199,7 @@ nav ul li a:hover::after{
 
     rgba(0,0,0,.55)),
 
-    url("homepage.jpg");
+    url("images/hero-bg.jpg");
 
     background-size:cover;
 
@@ -596,7 +596,7 @@ nav ul li a:hover::after{
     background:
     linear-gradient(rgba(13,71,161,.90),
     rgba(13,71,161,.90)),
-    url("homepage.jpg");
+    url("images/hero-bg.jpg");
 
     background-size:cover;
     background-position:center;
@@ -721,7 +721,7 @@ nav ul li a:hover::after{
     background:
     linear-gradient(rgba(255,152,0,.92),
     rgba(255,152,0,.92)),
-    url("homepage.jpg");
+    url("images/hero-bg.jpg");
 
     background-size:cover;
     background-position:center;
